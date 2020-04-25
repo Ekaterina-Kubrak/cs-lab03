@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1587848273 source:c:\users\kubra\onedrive\Рабочий стол\lab03\cs19-lab01\histogram.cpp
+	"histogram.h"
+	<iostream>
+
+1587848273 c:\users\kubra\onedrive\Рабочий стол\lab03\cs19-lab01\histogram.h
+	<vector>
+
+1587848562 source:c:\users\kubra\onedrive\Рабочий стол\lab03\cs19-lab01\test.cpp
+	"histogram.h"
+	<cassert>
+

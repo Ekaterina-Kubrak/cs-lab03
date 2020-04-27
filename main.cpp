@@ -83,15 +83,16 @@ int main()
     cin >> bin_count;
 
     // Обработка данных
+    const auto sred = sred_dlinna(number_count, bin_count);
 
-     double min, max;
-     find_minmax(numbers, min, max);
+    double min, max;
+    find_minmax(numbers, min, max);
 
-     const auto bins = make_histogram(numbers, bin_count, min, max);
+    const auto bins = make_histogram(numbers, bin_count, min, max);
 
     // Вывод данных
 
-    show_histogram_svg(bins);
+    show_histogram_svg(bins, sred);
 
     return 0;
 }

@@ -31,6 +31,10 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="../histogram.cpp" />
+		<Unit filename="../histogram.h" />
+		<Unit filename="../sr_ar.cpp" />
+		<Unit filename="../test.cpp" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>

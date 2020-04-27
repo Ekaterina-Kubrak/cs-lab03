@@ -1,4 +1,4 @@
-#include <iostream>
+#include<iostream>
 #include "svg.h"
 
 void svg_begin(double width, double height)
@@ -25,7 +25,7 @@ void svg_rect(double x, double y, double width, double height, string stroke, st
     cout << "<rect x='" << x << "' y='" << y << "' width='" << width << "' height='" << height << "' stroke='" << stroke << "' fill='" << fill << "'/>'";
 }
 
-void show_histogram_svg(const vector<size_t>& bins)
+void show_histogram_svg(const vector<size_t>& bins, const size_t sred)
 {
     const auto IMAGE_WIDTH = 400;
     const auto IMAGE_HEIGHT = 300;
@@ -36,8 +36,6 @@ void show_histogram_svg(const vector<size_t>& bins)
     const auto BLOCK_WIDTH = 10;
     const size_t SCREEN_WIDTH = 80;
     const size_t MAX_ASTERISK = SCREEN_WIDTH - 4 - 1;
-    string stroke = "mediumorchid";
-    string fill = "mediumorchid";
     svg_begin(IMAGE_WIDTH, IMAGE_HEIGHT);
     double top = 0;
     size_t max_count = 0;
@@ -52,14 +50,21 @@ void show_histogram_svg(const vector<size_t>& bins)
     double scaling_factor = 1;
     for (size_t bin : bins)
     {
-        const double bin_width = BLOCK_WIDTH * bin;
         svg_text(TEXT_LEFT, top + TEXT_BASELINE, to_string(bin));
         if (scaling_needed)
         {
             scaling_factor = (double)MAX_ASTERISK / max_count;
             bin = (size_t)(bin * scaling_factor);
         }
-        svg_rect(TEXT_WIDTH, top, bin_width, BIN_HEIGHT);
+        const double bin_width = BLOCK_WIDTH * bin;
+        if(bin > sred)
+        {
+            svg_rect(TEXT_WIDTH, top, bin_width, BIN_HEIGHT, "red", "red");
+        }
+        else
+        {
+            svg_rect(TEXT_WIDTH, top, bin_width, BIN_HEIGHT, "green", "green");
+        }
         top += BIN_HEIGHT;
     }
     svg_end();

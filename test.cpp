@@ -1,6 +1,6 @@
 #include "histogram.h"
-
 #include <cassert>
+#include "svg.h"
 
 void test_positive()
 {
@@ -47,6 +47,22 @@ void test_4()
     assert(max == 0);
 }
 
+void test_5()
+{
+    size_t number_count = 7;
+    size_t bin_count = 4;
+    double sred = sred_dlinna(number_count, bin_count);
+    assert(sred == 1);
+}
+
+void test_6()
+{
+    size_t number_count = 0;
+    size_t bin_count = 4;
+    double sred = sred_dlinna(number_count, bin_count);
+    assert(sred == 0);
+}
+
 int main()
 {
     test_positive();
@@ -54,4 +70,6 @@ int main()
     test_2();
     test_3();
     test_4();
+    test_5();
+    test_6();
 }

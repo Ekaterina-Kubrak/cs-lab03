@@ -13,7 +13,13 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add option="-DCURL_STATICLIB" />
+					<Add directory="curl/include" />
 				</Compiler>
+				<Linker>
+					<Add library="libcurl.a" />
+					<Add directory="curl/lib" />
+				</Linker>
 			</Target>
 			<Target title="Release">
 				<Option output="bin/Release/lab03-histogram" prefix_auto="1" extension_auto="1" />
@@ -32,11 +38,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="histogram.cpp" />
+		<Unit filename="histogram.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="svg.cpp" />
+		<Unit filename="svg.h" />
 		<Extensions>
-			<code_completion />
-			<envvars />
-			<debugger />
 			<lib_finder disable_auto="1" />
 		</Extensions>
 	</Project>

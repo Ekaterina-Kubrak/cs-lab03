@@ -33,9 +33,49 @@
 1589476559 c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\svg.h
 	<vector>
 
-1589482089 source:c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\main.cpp
+1589483579 source:c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\main.cpp
 	"histogram.h"
 	<iostream>
 	<vector>
 	"svg.h"
+	<curl/curl.h>
+
+1589482655 c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\curl\include\curl\curl.h
+	"curlver.h"
+	"system.h"
+	<stdio.h>
+	<limits.h>
+	<osreldate.h>
+	<sys/types.h>
+	<time.h>
+	<winsock2.h>
+	<ws2tcpip.h>
+	<sys/select.h>
+	<sys/socket.h>
+	<sys/time.h>
+	<support/SupportDefs.h>
+	"easy.h"
+	"multi.h"
+	"urlapi.h"
+	"typecheck-gcc.h"
+
+1589482655 c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\curl\include\curl\curlver.h
+
+1589482655 c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\curl\include\curl\system.h
+	<winsock2.h>
+	<windows.h>
+	<ws2tcpip.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<sys/poll.h>
+
+1589482655 c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\curl\include\curl\easy.h
+
+1589482655 c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\curl\include\curl\multi.h
+	"curl.h"
+
+1589482655 c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\curl\include\curl\urlapi.h
+	"curl.h"
+
+1589482655 c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\curl\include\curl\typecheck-gcc.h
 

@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include "svg.h"
+#include <curl/curl.h>
 using namespace std;
 
 vector<double>input_numbers(istream& in, size_t count)
@@ -97,6 +98,7 @@ void show_histogram_text(vector<size_t>bins)
 
 int main()
 {
+    curl_global_init(CURL_GLOBAL_ALL);
     // Ввод данных
     const auto input = read_input(cin, true);
     // Обработка данных

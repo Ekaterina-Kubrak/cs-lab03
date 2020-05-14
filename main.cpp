@@ -101,10 +101,13 @@ int main(int argc, char* argv[])
     curl_global_init(CURL_GLOBAL_ALL);
     if(argc > 1)
     {
-        cout << argc << endl;
-        for(size_t i=0; i < argc; i++)
+        CURL *curl = curl_easy_init();
+        if(curl)
         {
-            cout << "argv[" << i << "]=" << argv[i] << endl;
+            CURLcode res;
+            curl_easy_setopt(curl, CURLOPT_URL, argv[1]);
+            res = curl_easy_perform(curl);
+            curl_easy_cleanup(curl);
         }
         return 0;
     }
@@ -112,10 +115,10 @@ int main(int argc, char* argv[])
     const auto input = read_input(cin, true);
     // Обработка данных
 
-     double min, max;
-     find_minmax(input, min, max);
+    double min, max;
+    find_minmax(input, min, max);
 
-     const auto bins = make_histogram(input, min, max);
+    const auto bins = make_histogram(input, min, max);
 
     // Вывод данных
 

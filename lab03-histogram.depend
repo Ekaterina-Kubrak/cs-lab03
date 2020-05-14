@@ -19,3 +19,17 @@
 	<iostream>
 	"svg.h"
 
+1589476515 source:c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\histogram.cpp
+	"histogram.h"
+	<iostream>
+
+1589476515 c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\histogram.h
+	<vector>
+
+1589476559 source:c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\svg.cpp
+	<iostream>
+	"svg.h"
+
+1589476559 c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\svg.h
+	<vector>
+

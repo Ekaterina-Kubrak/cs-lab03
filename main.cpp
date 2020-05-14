@@ -14,20 +14,28 @@ vector<double>input_numbers(istream& in, size_t count)
     return result;
 }
 
-Input read_input(istream& in)
+Input read_input(istream& in, bool prompt)
 {
     Input data;
-
+    if(prompt == true)
+    {
     cerr << "Enter number count: ";
+    }
     size_t number_count;
     in >> number_count;
 
+    if(prompt == true)
+    {
     cerr << "Enter numbers: ";
+    }
     data.numbers = input_numbers(in, number_count);
 
 
     size_t bin_count;
+    if(prompt == true)
+    {
     cerr << "Enter column count: ";
+    }
     in >> data.bin_count;
 
     return data;
@@ -90,7 +98,7 @@ void show_histogram_text(vector<size_t>bins)
 int main()
 {
     // Ввод данных
-    const auto input = read_input(cin);
+    const auto input = read_input(cin, true);
     // Обработка данных
 
      double min, max;

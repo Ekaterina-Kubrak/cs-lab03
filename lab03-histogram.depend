@@ -33,12 +33,14 @@
 1589476559 c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\svg.h
 	<vector>
 
-1589491035 source:c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\main.cpp
+1589494739 source:c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\main.cpp
 	"histogram.h"
 	<iostream>
 	<vector>
 	"svg.h"
 	<curl/curl.h>
+	<sstream>
+	<string>
 
 1589482655 c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\curl\include\curl\curl.h
 	"curlver.h"

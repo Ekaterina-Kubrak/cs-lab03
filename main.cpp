@@ -2,6 +2,8 @@
 #include <iostream>
 #include <vector>
 #include "svg.h"
+#include <string>
+#include <sstream>
 using namespace std;
 
 vector<double>input_numbers(size_t count)
@@ -12,6 +14,13 @@ vector<double>input_numbers(size_t count)
         cin >> result[i];
     }
     return result;
+}
+
+string make_info_text()
+{
+    stringstream buffer;
+
+    return 0;
 }
 
 vector<size_t> make_histogram(const vector<double>& numbers, size_t bin_count, double min, double max)

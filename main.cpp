@@ -22,10 +22,17 @@ string make_info_text()
 {
     stringstream buffer;
     DWORD WINAPI info = GetVersion();
-    DWORD mask = 0b00000000'00000000'11111111'11111111;
+    DWORD mask = 0x0000ffff;
     DWORD version = info & mask;
     printf("Version is %x\n", version);
     printf("Version is %u\n", version);
+    DWORD platform = info >> 16;
+    printf("Platform is %u\n", platform);
+    DWORD version_minor = version >> 8;
+    printf("Version minor is %u\n", version_minor);
+    DWORD mask1 = 0xff;
+    DWORD version_major = version & mask1;
+    printf("Version major is %u\n", version_major);
     return buffer.str();
 }
 

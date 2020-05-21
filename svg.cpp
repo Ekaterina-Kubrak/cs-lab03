@@ -1,4 +1,8 @@
 #include <iostream>
+#include <string>
+#include <sstream>
+#include <cstdio>
+#include <windows.h>
 #include "svg.h"
 
 void svg_begin(double width, double height)
@@ -25,10 +29,32 @@ void svg_rect(double x, double y, double width, double height, string stroke, st
     cout << "<rect x='" << x << "' y='" << y << "' width='" << width << "' height='" << height << "' stroke='" << stroke << "' fill='" << fill << "'/>'";
 }
 
+string make_info_text()
+{
+    stringstream buffer;
+    DWORD WINAPI info = GetVersion();
+    DWORD mask = 0x0000ffff;
+    DWORD version = info & mask;
+    DWORD platform = info >> 16;
+    DWORD version_minor = version >> 8;
+    DWORD mask1 = 0xff;
+    DWORD version_major = version & mask1;
+    DWORD build;
+    if((info & 0x00000000) == 0)
+    {
+         build = platform;
+    }
+    TCHAR lpBuffer[MAX_COMPUTERNAME_LENGTH+1];
+    DWORD nSize = MAX_COMPUTERNAME_LENGTH+1;
+    GetComputerNameA(lpBuffer, &nSize);
+    buffer << "Windows v" << version_major << "." << version_minor << " (build " << build << ") " << " Computer name: " << lpBuffer;
+    return buffer.str();
+}
+
 void show_histogram_svg(const vector<size_t>& bins)
 {
-    const auto IMAGE_WIDTH = 400;
-    const auto IMAGE_HEIGHT = 300;
+    const auto IMAGE_WIDTH = 500;
+    const auto IMAGE_HEIGHT = 400;
     const auto TEXT_LEFT = 20;
     const auto TEXT_BASELINE = 20;
     const auto TEXT_WIDTH = 50;
@@ -62,5 +88,7 @@ void show_histogram_svg(const vector<size_t>& bins)
         svg_rect(TEXT_WIDTH, top, bin_width, BIN_HEIGHT);
         top += BIN_HEIGHT;
     }
+    string buffer = make_info_text();
+    svg_text(TEXT_LEFT, top + TEXT_BASELINE, buffer);
     svg_end();
 }

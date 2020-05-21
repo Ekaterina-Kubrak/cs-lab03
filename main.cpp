@@ -37,6 +37,8 @@ string make_info_text()
     {
         printf("BIT SET\n");
     }
+    DWORD build = platform;
+    printf("Build is %u\n", build);
     return buffer.str();
 }
 

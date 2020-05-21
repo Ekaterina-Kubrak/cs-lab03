@@ -33,3 +33,12 @@
 1589476559 c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\svg.h
 	<vector>
 
+1590053442 source:c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\main.cpp
+	"histogram.h"
+	<iostream>
+	<vector>
+	"svg.h"
+	<string>
+	<sstream>
+	<cstdio>
+

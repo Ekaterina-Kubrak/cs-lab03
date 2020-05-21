@@ -33,6 +33,10 @@ string make_info_text()
     DWORD mask1 = 0xff;
     DWORD version_major = version & mask1;
     printf("Version major is %u\n", version_major);
+    if ((info & 0x00000000) == 0)
+    {
+        printf("BIT SET\n");
+    }
     return buffer.str();
 }
 

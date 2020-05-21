@@ -26,7 +26,7 @@
 1589811777 c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\histogram.h
 	<vector>
 
-1590065523 source:c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\svg.cpp
+1590079320 source:c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\svg.cpp
 	<iostream>
 	<string>
 	<sstream>
@@ -37,7 +37,7 @@
 1590065602 c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\svg.h
 	<vector>
 
-1590065602 source:c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\main.cpp
+1590079416 source:c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\main.cpp
 	"histogram.h"
 	<iostream>
 	<vector>

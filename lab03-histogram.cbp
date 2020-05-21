@@ -32,11 +32,12 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="histogram.cpp" />
+		<Unit filename="histogram.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="svg.cpp" />
+		<Unit filename="svg.h" />
 		<Extensions>
-			<code_completion />
-			<envvars />
-			<debugger />
 			<lib_finder disable_auto="1" />
 		</Extensions>
 	</Project>

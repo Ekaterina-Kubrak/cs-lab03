@@ -40,14 +40,17 @@ string make_info_text()
     DWORD mask1 = 0xff;
     DWORD version_major = version & mask1;
     DWORD build = platform;
-    buffer << "Windows v" << version_major << "." << version_minor << " (build " << build << ")";
+    TCHAR lpBuffer[MAX_COMPUTERNAME_LENGTH+1];
+    DWORD nSize = MAX_COMPUTERNAME_LENGTH+1;
+    GetComputerNameA(lpBuffer, &nSize);
+    buffer << "Windows v" << version_major << "." << version_minor << " (build " << build << ") " << " Computer name: " << lpBuffer;
     return buffer.str();
 }
 
 void show_histogram_svg(const vector<size_t>& bins)
 {
-    const auto IMAGE_WIDTH = 400;
-    const auto IMAGE_HEIGHT = 300;
+    const auto IMAGE_WIDTH = 500;
+    const auto IMAGE_HEIGHT = 400;
     const auto TEXT_LEFT = 20;
     const auto TEXT_BASELINE = 20;
     const auto TEXT_WIDTH = 50;

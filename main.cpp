@@ -4,6 +4,8 @@
 #include "svg.h"
 #include <string>
 #include <sstream>
+#include <cstdio>
+#include <windows.h>
 using namespace std;
 
 vector<double>input_numbers(size_t count)
@@ -19,8 +21,10 @@ vector<double>input_numbers(size_t count)
 string make_info_text()
 {
     stringstream buffer;
-
-    return 0;
+    DWORD WINAPI wVersion = GetVersion();
+    printf("Version is %x\n", wVersion);
+    printf("Version is %u\n", wVersion);
+    return buffer.str();
 }
 
 vector<size_t> make_histogram(const vector<double>& numbers, size_t bin_count, double min, double max)
@@ -79,6 +83,8 @@ void show_histogram_text(vector<size_t>bins)
 
 int main()
 {
+    make_info_text();
+    return 0;
     // Ввод данных
     size_t number_count;
     cerr << "Enter number count: ";

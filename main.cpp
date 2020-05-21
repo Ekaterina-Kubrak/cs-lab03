@@ -21,9 +21,11 @@ vector<double>input_numbers(size_t count)
 string make_info_text()
 {
     stringstream buffer;
-    DWORD WINAPI wVersion = GetVersion();
-    printf("Version is %x\n", wVersion);
-    printf("Version is %u\n", wVersion);
+    DWORD WINAPI info = GetVersion();
+    DWORD mask = 0b00000000'00000000'11111111'11111111;
+    DWORD version = info & mask;
+    printf("Version is %x\n", version);
+    printf("Version is %u\n", version);
     return buffer.str();
 }
 

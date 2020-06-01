@@ -93,6 +93,5 @@ int main()
     // Вывод данных
 
     show_histogram_svg(bins, sred);
-
     return 0;
 }

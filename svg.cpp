@@ -35,8 +35,7 @@ void show_histogram_svg(const vector<size_t>& bins, const size_t sred)
     const auto BIN_HEIGHT = 30;
     const auto BLOCK_WIDTH = 10;
     const size_t SCREEN_WIDTH = 80;
-    const size_t MAX_ASTERISK = SCREEN_WIDTH - 4 - 1;
-    svg_begin(IMAGE_WIDTH, IMAGE_HEIGHT);
+    const size_t MAX_ASTERISK = IMAGE_WIDTH - TEXT_LEFT - TEXT_WIDTH;
     double top = 0;
     size_t max_count = 0;
     for (size_t count : bins)
@@ -46,17 +45,18 @@ void show_histogram_svg(const vector<size_t>& bins, const size_t sred)
             max_count = count;
         }
     }
-    const bool scaling_needed = max_count > MAX_ASTERISK;
-    double scaling_factor = 1;
+    const bool scaling_needed = max_count * BLOCK_WIDTH > MAX_ASTERISK;
+    svg_begin(IMAGE_WIDTH, IMAGE_HEIGHT);
     for (size_t bin : bins)
     {
+        size_t height = bin;
         svg_text(TEXT_LEFT, top + TEXT_BASELINE, to_string(bin));
         if (scaling_needed)
         {
-            scaling_factor = (double)MAX_ASTERISK / max_count;
-            bin = (size_t)(bin * scaling_factor);
+            const double scaling_factor = (double)MAX_ASTERISK / (max_count * BLOCK_WIDTH);
+            height = (size_t)(bin * scaling_factor);
         }
-        const double bin_width = BLOCK_WIDTH * bin;
+        const double bin_width = BLOCK_WIDTH * height;
         if(bin > sred)
         {
             svg_rect(TEXT_WIDTH, top, bin_width, BIN_HEIGHT, "red", "red");

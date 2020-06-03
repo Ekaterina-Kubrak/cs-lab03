@@ -2,7 +2,14 @@
 #define HISTOGRAM_H_INCLUDED
 
 #include <vector>
+#include <curl/curl.h>
 using namespace std;
+
+struct myprogress
+{
+  double lastruntime;
+  CURL *curl;
+};
 
 struct Input
 {

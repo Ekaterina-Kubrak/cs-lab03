@@ -19,14 +19,15 @@
 	<iostream>
 	"svg.h"
 
-1590084239 source:c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\histogram.cpp
+1590142129 source:c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\histogram.cpp
 	"histogram.h"
 	<iostream>
 
-1590084239 c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\histogram.h
+1591204604 c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\histogram.h
 	<vector>
+	<curl/curl.h>
 
-1590082501 source:c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\svg.cpp
+1591198142 source:c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\svg.cpp
 	<iostream>
 	<string>
 	<sstream>
@@ -34,10 +35,10 @@
 	<windows.h>
 	"svg.h"
 
-1590082501 c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\svg.h
+1590142129 c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\svg.h
 	<vector>
 
-1590084239 source:c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\main.cpp
+1591220476 source:c:\users\kubra\onedrive\Рабочий стол\lab04\cs-lab03\main.cpp
 	"histogram.h"
 	<iostream>
 	<vector>

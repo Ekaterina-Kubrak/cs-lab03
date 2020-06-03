@@ -7,6 +7,21 @@
 #include <string>
 using namespace std;
 
+int progress_callback(void *clientp,   double dltotal,   double dlnow,   double ultotal,   double ulnow)
+{
+    int percent;
+    if (dltotal == 0)
+    {
+        percent = 0;
+    }
+    else
+    {
+        percent = dlnow / dltotal * 100;
+    }
+    cerr << "Progress: " << percent << "%\n";
+    return 0;
+}
+
 vector<double>input_numbers(istream& in, size_t count)
 {
     vector<double>result(count);
@@ -22,8 +37,9 @@ Input read_input(istream& in, bool prompt)
     Input data;
     if(prompt == true)
     {
-    cerr << "Enter number count: ";
+        cerr << "Enter number count: ";
     }
+
     size_t number_count;
     in >> number_count;
 
@@ -113,6 +129,9 @@ Input download(const string& address)
     if(curl)
     {
         CURLcode res;
+        curl_easy_setopt(curl, CURLOPT_PROGRESSDATA, &buffer);
+        curl_easy_setopt(curl, CURLOPT_NOPROGRESS, 0);
+        curl_easy_setopt(curl, CURLOPT_PROGRESSFUNCTION, progress_callback);
         curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, FALSE);
         curl_easy_setopt(curl, CURLOPT_URL, address.c_str());
         curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
